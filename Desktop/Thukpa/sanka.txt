@@ -1,0 +1,4 @@
+vasline vs5 100000.00 2
+
+gooday gd6 30.00 2
+

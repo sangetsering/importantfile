@@ -1,0 +1,26 @@
+//program to read the file the square of integer
+
+#include<stdio.h>
+
+int main()
+{
+	FILE *fp,*fp1;
+	int n;
+	
+	fp=fopen("chara.txt","r");
+	fp1=fopen("sir.txt","w");
+	while((n=getw(fp))!=EOF)
+	{
+		putw(n*n,fp1);
+	}
+	fclose(fp);
+	fclose(fp1);
+	
+	//print the stored content of fp1
+    fp1=fopen("sir.txt","r");
+	while((n=getw(fp1))!=EOF)
+	{
+		printf("%d ",n);
+	}
+	fclose(fp1);
+}

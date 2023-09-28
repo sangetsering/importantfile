@@ -1,0 +1,257 @@
+//program to find area and circumference of circle given radius
+#include<stdio.h>
+
+int main()
+{
+    int radi;
+    float area,circum;
+    printf("enter the radius of circle;\n");
+    scanf("%d",&radi);
+    printf("\n  Area of circle:%.2f",(3.14)*radi*radi);
+    printf("\n circumference of cirle: %.2f",2*3.14*radi);
+    return 0;
+}
+
+
+//program to read the three number and find greatest
+#include<stdio.h>
+
+int main()
+{
+    int num1,num2,num3;
+    printf("enter the three number;\n");
+    scanf("%d%d%d",&num1,&num2,&num3);
+    if(num1>num2 && num1>num3)
+       printf("%d is greatestr:\n",num1);
+    if(num2>num1 && num2>num3)
+      printf("%d is  greatest:\n",num2);
+    else
+     printf("%d is  greatest:\n",num3);
+     
+    return 0;
+}
+
+
+
+//program to check for prime
+#include<stdio.h>
+
+int main()
+{
+    int n,i,flag=0;
+    printf("enter a number:\n");
+    scanf("%d",&n);
+    
+    for(i=2;i<n;i++)
+    {
+        if(n%i==0)
+        {
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0)
+       printf("%d is prime number:\n",n);
+    else
+      printf("%d is not prime number:\n",n);
+    return 0;
+    
+}
+
+//program to check for prime
+#include<stdio.h>
+
+int main()
+{
+    int n,i,marks=0;
+    float avg=0;
+    printf("enter a number of students:\n");
+    scanf("%d",&n);
+    printf("THE marks of:");
+    for(i=0;i<n;i++)
+    {
+        printf("\n %d student:",i+1);
+        scanf("%d",&marks);
+        avg=avg+marks;
+    }
+    printf("\n average marks obtain by %d students = %.2f",n,avg/n);
+    return 0;
+    
+}
+
+//program to find sum and difference of two matrices
+#include<stdio.h>
+
+int main()
+{
+    int mat1[2][2],mat2[2][2];
+    int sum[2][2],diff[2][2];
+    
+    printf("enter the element of first 2X2 matrix:\n");
+    for(int i=0;i<2;i++)
+    {
+        printf("enter element of %d row:\n",i+1);
+        for(int j=0;j<2;j++)
+        {
+            scanf("%d",&mat1[i][j]);
+        }
+    }
+    
+    printf("enter the element of second 2X2 matrix:\n");
+    for(int i=0;i<2;i++)
+    {
+        printf("enter element of %d row:\n",i+1);
+        for(int j=0;j<2;j++)
+        {
+            scanf("%d",&mat2[i][j]);
+        }
+    }
+    
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            sum[i][j]=mat1[i][j]+mat2[i][j];
+            diff[i][j]=mat1[i][j]-mat2[i][j];
+        }
+    }
+    
+    printf("sum of two matrix :\n");    
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            printf("%5d",sum[i][j]);
+        }
+        printf("\n");
+    }
+    
+    printf("difference of two matrix :\n");
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            printf(" %5d ",diff[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
+//program to find the square  and root of 10 number (1-10);
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    int i,sq;
+    float root;
+    printf("square of 1-10\n");
+    for(i=1;i<=10;i++)
+    {
+        sq=pow(i,2);
+        printf(" %3d",sq);
+    }
+    printf("\n roots of 1 - 10\n");
+    for(i=1;i<=10;i++)
+    {
+       root=sqrt(i);
+       printf(" %3.2lf \n",root);
+    }
+    return 0;
+}
+
+//program to check palindrome and find sum of digits
+#include<stdio.h>
+
+int main()
+{
+	int D,N,R,rever=0,sum=0;
+	
+	printf("enter number having digit more than one:\n");
+	scanf("%d",&N);
+	
+	D=N;
+	while(D>0)
+	{
+		R=D%10;
+		sum=sum+R;
+		rever=rever*10+R;
+		D=D/10;
+	}
+	printf("Sum of digit: %d\n",sum);
+	if(N==rever)
+	   printf("%d is palindrome.\n",N);
+	else
+	   printf("%d is not palindrome.\n",N);
+
+    return 0;
+	
+}
+
+//program to find length of string without using function
+#include<stdio.h>
+
+int main()
+{
+    int l;
+    char string[50];
+    printf("enter a string:\n");
+    scanf("%s",string);
+    l=0;
+    while(string[l]!='\0')
+    {
+        l++;
+    }
+    
+    printf("length of string:%d",l);
+    
+    return 0;
+}
+
+//program to swap program using pointer
+
+#include<stdio.h>
+
+int main()
+{
+    int *n1,*n2;
+    int num1=100,num2=200;
+    
+    n1=&num1; n2=&num2;
+    
+    printf("num1=%d AND num2=%d Before swap:\n",*n1,*n2);
+    
+    //swaping
+    int swap;
+    swap=*n1;
+    *n1=*n2;
+    *n2=swap;
+    
+    printf("num1=%d AND num2=%d Before swap:\n",*n1,*n2);
+    
+    return 0;
+}
+
+//progrma to demostrate the string function
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str1[]={"Iamgoodboy"},str2[]={"hetooisgood"};
+    char str3[100];
+    
+    //string functions list
+    printf("length of string 1:%ld\n",strlen(str1));
+    printf("concatination of strings in one :%s\n",strcat(str1,str2));
+    printf("copied content of string one in empty string :%s\n",strcpy(str3,str1));
+    if(strcmp(str1,str3)==0)
+       printf("Both string are equal :[%s] AND [%s]:\n",str1,str3);
+    else   
+       printf("Both string are different :[%s] AND [%s]:\n",str1,str3);
+       
+    return 0;
+}
+
